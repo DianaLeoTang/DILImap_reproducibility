@@ -1,0 +1,27 @@
+[tool.ruff.lint]
+# Select the rules to apply
+select = ['B', 'C', 'E', 'F', 'W', 'B9']
+
+ignore = [
+    'B007',  # Loop control variable not used within loop body
+    'E501',  # Line length is handled separately
+    'E203',  # Whitespace before ':' handled by black
+    'E712',  # Equality comparisons to `False`
+    'E741',  # ambiguous variable name
+    'C901',  # Function is too complex
+    'F403',  # Unable to detect undefined names
+    'B023',  # Function definition does not bind loop variable
+    'B008',  # Do not perform function call in argument defaults
+    'B028',  # No explicit `stacklevel` keyword argument found
+    'C408',  # Unnecessary `dict()` call (rewrite as a literal)
+    'B026',  # Star-arg unpacking
+    'W291',  # Whitespace
+    'W293',  # Whitespace
+    'E402',  # Module-level import not at top of file
+    'B006',  # Mutable data structures
+    'F841',  # Local variable assigned but not used
+    'F401',  # Unused imports
+]
+
+[tool.ruff.format]
+quote-style = "single"
