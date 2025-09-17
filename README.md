@@ -2,7 +2,7 @@
 
 This repository contains Jupyter notebooks supporting the reproducibility of all results in the DILImap project. 
 - DILImap codebase: [github.com/Cellarity/DILImap](https://github.com/Cellarity/DILImap)
-- DILImap website: [dilimap.org](https://dilimap.org/review-dUFZulWv8k7bERJ3FQs4)
+- DILImap website: [dilimap.org](https://dilimap.org/)
 
 ## 📁 Repository Structure
 
