@@ -1,5 +1,5 @@
 # DILImap Reproducibility Notebooks
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17148281.svg)](https://doi.org/10.5281/zenodo.17148281)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17290520.svg)](https://doi.org/10.5281/zenodo.17290520)
 
 This repository contains Jupyter notebooks supporting the reproducibility of all results in the DILImap project. 
 - DILImap codebase: [github.com/Cellarity/DILImap](https://github.com/Cellarity/DILImap)
