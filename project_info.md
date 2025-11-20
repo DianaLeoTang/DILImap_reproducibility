@@ -52,15 +52,25 @@ conda activate dilimap
 
 #### 3. 安装 DILImap 包
 
-```bash
-# 安装 DILImap（如果尚未安装）
-pip install dilimap
+本项目需要安装 `dilimap` Python 包。如果你已经 fork 了 DILImap 仓库，请安装你的 fork 版本：
 
-# 或者从源码安装
-# git clone https://github.com/Cellarity/DILImap.git
-# cd DILImap
-# pip install -e .
+```bash
+# 方法1：直接从你的 GitHub fork 安装（推荐）
+pip install git+https://github.com/DianaLeoTang/DILImap.git
+
+# 方法2：克隆后以可编辑模式安装（适合开发调试）
+git clone https://github.com/DianaLeoTang/DILImap.git
+cd DILImap
+pip install -e .
+cd ..
 ```
+
+**注意**：
+- 如果你 fork 了仓库并进行了修改，应该使用你的 fork 版本而不是原作者的版本
+- 如果使用可编辑模式安装（`pip install -e .`），修改代码后无需重新安装即可生效
+- 如果之前安装了原作者的版本，先卸载：`pip uninstall dilimap`
+
+> 📖 详细的 fork 版本安装说明请参考 [INSTALLATION_FORK.md](INSTALLATION_FORK.md)
 
 #### 4. 安装项目依赖
 
