@@ -5,6 +5,48 @@ This repository contains Jupyter notebooks supporting the reproducibility of all
 - DILImap codebase: [github.com/Cellarity/DILImap](https://github.com/Cellarity/DILImap)
 - DILImap website: [dilimap.org](https://dilimap.org/)
 
+## 🚀 Quick Start
+
+### Installing DILImap Package
+
+The `dilimap` package is a standalone Python package that has been published to PyPI. You have several installation options:
+
+#### Option 1: Install from PyPI (Original Version)
+```bash
+pip install dilimap
+```
+
+#### Option 2: Install from Your Forked Repository
+If you have forked the DILImap repository to your own GitHub, you can install your version:
+
+```bash
+# Replace YOUR_USERNAME with your GitHub username
+pip install git+https://github.com/YOUR_USERNAME/DILImap.git
+
+# Or for editable installation (recommended for development)
+git clone https://github.com/YOUR_USERNAME/DILImap.git
+cd DILImap
+pip install -e .
+```
+
+#### Option 3: Install from Local Source
+If you have the DILImap source code locally:
+
+```bash
+cd /path/to/DILImap
+pip install -e .
+```
+
+**Note**: You only need to install ONE version. If you've forked the repository and made modifications, use Option 2 to install your fork version. The package name remains `dilimap` regardless of which source you install from.
+
+> 📖 **For detailed instructions on installing from a forked repository**, see [INSTALLATION_FORK.md](INSTALLATION_FORK.md)
+
+### Verify Installation
+```python
+import dilimap as dmap
+dmap.logging.print_version()
+```
+
 ## 📁 Repository Structure
 
 ### 📚 Tutorials
