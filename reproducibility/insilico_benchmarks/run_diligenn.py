@@ -29,6 +29,15 @@ from torch_geometric.nn import SAGEConv, GCNConv, GATConv, GINConv
 from torch_geometric.data import Data, InMemoryDataset
 from torch_geometric.loader import DataLoader
 from torch.utils.data import Subset
+
+# Fix for PyTorch 2.6+ compatibility: allow torch_geometric classes in torch.load
+# This is needed because PyTorch 2.6 changed the default weights_only=True
+try:
+    from torch_geometric.data.data import DataEdgeAttr
+    torch.serialization.add_safe_globals([DataEdgeAttr, Data, InMemoryDataset])
+except (ImportError, AttributeError):
+    # Fallback for older PyTorch versions or if the class doesn't exist
+    pass
 ##### Molecular Graph Generation
 ## Customised preprocessing (Mols-To-Graph function)
 
@@ -145,10 +154,14 @@ class Graph_basic(InMemoryDataset):
         if self._data is None:
             if self.test:
                 self._data = torch.load(
-                    os.path.join(self.processed_dir, 'data_test.pt')
+                    os.path.join(self.processed_dir, 'data_test.pt'),
+                    weights_only=False  # Required for PyTorch 2.6+ to load torch_geometric objects
                 )
             else:
-                self._data = torch.load(os.path.join(self.processed_dir, 'data.pt'))
+                self._data = torch.load(
+                    os.path.join(self.processed_dir, 'data.pt'),
+                    weights_only=False  # Required for PyTorch 2.6+ to load torch_geometric objects
+                )
         return self._data[idx]
 
 
@@ -327,10 +340,14 @@ class Graph_custom(InMemoryDataset):
         if self._data is None:
             if self.test:
                 self._data = torch.load(
-                    os.path.join(self.processed_dir, 'data_test.pt')
+                    os.path.join(self.processed_dir, 'data_test.pt'),
+                    weights_only=False  # Required for PyTorch 2.6+ to load torch_geometric objects
                 )
             else:
-                self._data = torch.load(os.path.join(self.processed_dir, 'data.pt'))
+                self._data = torch.load(
+                    os.path.join(self.processed_dir, 'data.pt'),
+                    weights_only=False  # Required for PyTorch 2.6+ to load torch_geometric objects
+                )
         return self._data[idx]
 
 
